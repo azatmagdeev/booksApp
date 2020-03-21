@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 07 2020 г., 00:13
+-- Время создания: Мар 20 2020 г., 02:18
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `authors` (
-  `id` int(11) NOT NULL,
-  `name` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL
+                           `id` int(11) NOT NULL,
+                           `name` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -51,10 +51,10 @@ INSERT INTO `authors` (`id`, `name`) VALUES
 --
 
 CREATE TABLE `books` (
-  `id` int(11) NOT NULL,
-  `name` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `note` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL
+                         `id` int(11) NOT NULL,
+                         `name` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
+                         `note` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                         `image` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -76,9 +76,9 @@ INSERT INTO `books` (`id`, `name`, `note`, `image`) VALUES
 --
 
 CREATE TABLE `books_authors` (
-  `id` int(10) NOT NULL,
-  `book_id` int(10) NOT NULL,
-  `author_id` int(10) NOT NULL
+                                 `id` int(10) NOT NULL,
+                                 `book_id` int(10) NOT NULL,
+                                 `author_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -101,9 +101,9 @@ INSERT INTO `books_authors` (`id`, `book_id`, `author_id`) VALUES
 --
 
 CREATE TABLE `books_tags` (
-  `id` int(11) NOT NULL,
-  `book_id` int(11) NOT NULL,
-  `tag_id` int(11) NOT NULL
+                              `id` int(11) NOT NULL,
+                              `book_id` int(11) NOT NULL,
+                              `tag_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -125,8 +125,8 @@ INSERT INTO `books_tags` (`id`, `book_id`, `tag_id`) VALUES
 --
 
 CREATE TABLE `tags` (
-  `id` int(11) NOT NULL,
-  `tag` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL
+                        `id` int(11) NOT NULL,
+                        `tag` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -147,9 +147,9 @@ INSERT INTO `tags` (`id`, `tag`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` int(10) NOT NULL,
-  `login` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+                         `id` int(10) NOT NULL,
+                         `login` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+                         `password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -168,37 +168,37 @@ INSERT INTO `users` (`id`, `login`, `password`) VALUES
 -- Индексы таблицы `authors`
 --
 ALTER TABLE `authors`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `books`
 --
 ALTER TABLE `books`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `books_authors`
 --
 ALTER TABLE `books_authors`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `books_tags`
 --
 ALTER TABLE `books_tags`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `tags`
 --
 ALTER TABLE `tags`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
@@ -208,37 +208,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `books_authors`
 --
 ALTER TABLE `books_authors`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+    MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `books_tags`
 --
 ALTER TABLE `books_tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+    MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
